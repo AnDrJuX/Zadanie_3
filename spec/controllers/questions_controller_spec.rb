@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe QuestionsController, type: :controller do
+  let (:question) { create(:question) }
+
   describe 'GET #index' do
     let (:questions) { create_list(:question, 2) }
 
@@ -19,7 +21,7 @@ RSpec.describe QuestionsController, type: :controller do
 
   describe 'GET #show' do
     before do
-      get :show, params: { id: question }
+      get :show, params: { id: question}
     end
 
     it 'pulls question from DB to @question' do
