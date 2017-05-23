@@ -19,7 +19,7 @@ RSpec.describe QuestionsController, type: :controller do
 
   describe 'GET #show' do
     before do
-      get :show, params: { id: question}
+      get :show, params: { id: question }
     end
 
     it 'pulls question from DB to @question' do
